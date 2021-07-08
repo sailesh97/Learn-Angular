@@ -15,3 +15,34 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+<!-- 
+
+app-root selector and bunch of javascript imported which while will be executed first when we starts the application with ng serve command.
+
+the script executes our main.ts file 1st which indeed goes to our app.module.ts file, where Angular get all the information needed to load our application(i.e; what is app-root selector it found in index.html page)
+
+Now, in app-module, the bootstraped component is app.component
+
+So, it goes to app.component's template file i,e; app-component.html 
+
+and Finally Angular is able to resolve the app-root selector. It replaces the app-root with the html content of app.component.html
+
+-->
+
+<!-- 
+
+Angular is used to make single page applications.
+
+Unlike having multiple pages for multiple views in a multi-page applications,
+
+Angular chnages the DOM at runtime to show different views. The single page we are talking about is nothing but the index.html page only.
+
+It's the only page that is served and is changed at run time through the javascript code we injected on this file(index.html) after ng serve.
+
+Summary:
+What is Angular ?
+Angular is a JS framework changing the DOM('HTML') at runtime. 
+
+-->
