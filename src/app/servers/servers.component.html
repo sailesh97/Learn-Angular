@@ -1,3 +1,36 @@
+<button 
+    class="btn btn-primary"
+    [disabled]='allowNewServer'
+>Add Server</button>
+
 <app-server></app-server>
 <app-server></app-server>
 <app-server></app-server>
+
+<!--
+    To bind allowNewServer with the button element, we're using property binding.
+
+    To achieve property binding, we need to wrap *prop with [], which tells Angular we want to dynamicallybind some poperty.
+
+    When browser parses an HTML document during CRITICAL RENDERING PATH, it converts each HTML element to an element of Document Object Model. 
+    So this DOMElemnt has a lot of properties from which many can't even set through our HTML code. These all properties you can find IF you console a HTML element and Check it's __proto__ object
+
+    But for button elemtnt, we can set the disabled property from HTML code.
+        e.g: <button disabled>Add Server </button> -- Disabled Button
+            <button> Add Server </button> Not disabled button
+
+    But here in Angular, when we use property binding, it's not same as above example.
+    When we wrap any HTMLElementProp within [], we're directly binding the value(allowNewServer) to the native "disabled" property of DOMButton element, not the HTML we write HTML file
+
+    Different HTML elememt seeks different type of values,
+    disabled property of button seeks a boolean value. Other properties may seek a string or any other data type value.
+    So, the values of the property depends on the property itself.
+
+    For disabled property, the value should be anything(any expression, ternary operator, function call) that resolves to a boolean.
+
+    So what Angular does here in property binding is:
+    When the allowNewServer changes, Angular interacts with the DOM at runtime and changes it(It accesses the Button element from DOM, and accesses the disabled property and changes it's value.) which makes the button enabled again.
+
+    Besides binding to HTML element properties,
+    we can also bind to properties of directives or properties of custom element created by us as well.
+-->
