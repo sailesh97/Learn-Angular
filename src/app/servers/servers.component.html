@@ -1,14 +1,37 @@
+<label for="">Server Name</label>
+<input type="text" 
+    class="form-control" 
+    (input)="onUpdateServerName($event)">
+<!-- $event is a reserved variable that we have access to in our template file while using event binding.
+    It contains some information about the event fired.
+    you can get that event.target.values
+-->
+<p>{{serverName}}</p>
 <button 
     class="btn btn-primary"
-    [disabled]='allowNewServer'
+    [disabled]='!allowNewServer'
+    (click)="onCreateServer()"
 >Add Server</button>
+<!-- (click)='this.serverCreationStatus = "Server was created."' -->
+<!-- (click)="onCreateServer()" -->
 <hr>
 <p><b>String Interpolation </b>{{allowNewServer}}</p>
 <p><b>Property Binding </b><span [innerText]="allowNewServer"></span></p>
+
+<p>{{serverCreationStatus}}</p>
 <hr>
 <app-server></app-server>
 <app-server></app-server>
 <app-server></app-server>
+
+<!--
+    If a HTML element has a event onclick, in Angular that will be click.
+    Remove the 'on' from beginning.
+
+    For most of the event this rule work.
+
+    In event binding you can call a method or can write inline code also.
+-->
 
 <!--
     String Interpolation vs Property Binding
@@ -16,7 +39,7 @@
     If you want to output somenthing to DOM, use string interpolation
 
     If you want to set property of a (HTML element, directive or custom component ) dynamically, use property binding.
-    
+
 -->
 
 <!--
