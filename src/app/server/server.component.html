@@ -1,1 +1,23 @@
-<p>The Server Component</p>
+<p>{{"Server"}} with {{serverId}} is {{getServerStatus()}}</p>
+
+<!-- 
+    -----Data Binding-------
+             |
+             |
+    -----------------------------------------------------------------------   
+    |                        |                         |                |
+    \/                      \/                         \/               \/
+    String                  PropertyBinding          Event Bindng      Two way data binding
+    Interpolation
+    
+    Rules:
+    
+    1. For String Interpolation:
+       Synatx: {{ any expression that resolves to a string }}
+    
+        i.    {{ any function call that returns a string or a variable that store some string, }}
+                Any thing that can be converted to a string will work, (In our example, though serverId is a number, it will work.)
+        ii.   You can't write multiline expression inside these {{}}
+        iii.  You can't write block expressions like a If block or For loop here
+        iv.   You can write ternary expression though.
+ -->
