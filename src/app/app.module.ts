@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ServerComponent } from '../app/server/server.component';
 import { ServersComponent } from './servers/servers.component'; // While imporing the file, we don't need to mention the extension here, The extension is added by webpack which bundles our application automatically.  
+import { FormsModule } from '@angular/forms';
 
 /**
  * Any new component we create needs to be registered here in declarations array. Otherwise angular won't recognize the new component's selector string, when we will use it in app.component's template file.
@@ -21,7 +22,8 @@ import { ServersComponent } from './servers/servers.component'; // While imporin
     ServersComponent
   ],
   imports: [
-    BrowserModule // Angular it self split up into different modules. Browser module gives us all the base functionality we need to start our app.
+    BrowserModule, // Angular it self split up into different modules. Browser module gives us all the base functionality we need to start our app.
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent] // The root component
