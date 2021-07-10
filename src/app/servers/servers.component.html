@@ -2,10 +2,22 @@
     class="btn btn-primary"
     [disabled]='allowNewServer'
 >Add Server</button>
+<hr>
+<p><b>String Interpolation </b>{{allowNewServer}}</p>
+<p><b>Property Binding </b><span [innerText]="allowNewServer"></span></p>
+<hr>
+<app-server></app-server>
+<app-server></app-server>
+<app-server></app-server>
 
-<app-server></app-server>
-<app-server></app-server>
-<app-server></app-server>
+<!--
+    String Interpolation vs Property Binding
+
+    If you want to output somenthing to DOM, use string interpolation
+
+    If you want to set property of a (HTML element, directive or custom component ) dynamically, use property binding.
+    
+-->
 
 <!--
     To bind allowNewServer with the button element, we're using property binding.
@@ -34,3 +46,4 @@
     Besides binding to HTML element properties,
     we can also bind to properties of directives or properties of custom element created by us as well.
 -->
+
