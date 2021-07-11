@@ -47,6 +47,11 @@
 
     If you inspect the page, you'll find that the p tag with ngIf was not there at first. It got inserted in DOM once the button is clicked.
     And Angular maintains a mark or hook in DOM to know where it have to insert the p tag when serverCreated changes to true in ngIf.
+
+    The * in ngIf directive means that it's a structural directive; which means it changes the structure of our DOM.
+    It either adds this element or it doesn't add it.
+
+    We use this directive as an attribute.
 -->
 
 <!--bindings={ hook in DOM
