@@ -41,7 +41,7 @@
 <!-- <app-server></app-server>
 <app-server></app-server>
 <app-server></app-server> -->
-<app-server *ngFor="let server of servers"></app-server>
+<app-server *ngFor="let server of servers; let i = index"></app-server>
 <!-- 
     Value for *ngIf directive is any expression that retuns a boolean value true or false within double quotes. 
 
