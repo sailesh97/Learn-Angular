@@ -1,4 +1,7 @@
-<p [ngStyle]="{backgroundColor: getColor()}">{{"Server"}} with {{serverId}} is {{getServerStatus()}}</p>
+<p 
+[ngStyle]="{backgroundColor: getColor()}"
+[ngClass] ="{online: serverStatus === 'online'}"      
+>{{"Server"}} with {{serverId}} is {{getServerStatus()}}</p>
 
 <!-- 
     -----Data Binding-------
@@ -41,4 +44,15 @@
     So, ngStyle allows us to dynamically change the color based on value of serverStatus.
 
     If serverStatus changes over time, it's bgColor will also change dynamically based on the value. 
+ -->
+
+ <!--
+        Like ngStyle allows us to dynamically assign a style,
+        ngClass allows us tp dynamically add or remove css classes.
+
+        Like ngStyle, for ngClass as well, we're binding to ngClass property of ngClass directive.
+
+        This ngClass property of ngClass directive expects a object as a value. Other properties of ngClass directive may expect different values(may be a string or boolean.)
+
+        The object contains the key as the css class name and value is a condition determining the css class should be attached or not.
  -->

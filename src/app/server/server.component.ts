@@ -3,6 +3,11 @@ import { Component } from "@angular/core";
 @Component({
     selector:'app-server',
     templateUrl: './server.component.html',
+    styles: [`
+        .online{
+            color: white;
+        }
+    `]
     // template:`<h3>Server Component</h3>`
 })
 
