@@ -1,7 +1,7 @@
 <label for="">Server Name</label>
-<input type="text" 
+<!-- <input type="text" 
     class="form-control" 
-    (input)="onUpdateServerName($event)">
+    (input)="onUpdateServerName($event)"> -->
 <!-- $event is a reserved variable that we have access to in our template file while using event binding.
     It contains some information about the event fired.
     you can get that event.target.values
@@ -30,11 +30,23 @@
 <p><b>String Interpolation </b>{{allowNewServer}}</p>
 <p><b>Property Binding </b><span [innerText]="allowNewServer"></span></p>
 
-<p>{{serverCreationStatus}}</p>
+<!-- <p>{{serverCreationStatus}}</p> -->
+<p *ngIf="serverCreated">Server was created, server name is {{serverName}}</p>
 <hr>
 <app-server></app-server>
 <app-server></app-server>
 <app-server></app-server>
+
+<!-- 
+    Value for *ngIf directive is any expression that retuns a boolean value true or false within double quotes. 
+
+    If you inspect the page, you'll find that the p tag with ngIf was not there at first. It got inserted in DOM once the button is clicked.
+    And Angular maintains a mark or hook in DOM to know where it have to insert the p tag when serverCreated changes to true in ngIf.
+-->
+
+<!--bindings={ hook in DOM
+  "ng-reflect-ng-if": "false"
+}-->
 
 <!--
     If a HTML element has a event onclick, in Angular that will be click.
