@@ -1,4 +1,4 @@
-<p>{{"Server"}} with {{serverId}} is {{getServerStatus()}}</p>
+<p [ngStyle]="{backgroundColor: getColor()}">{{"Server"}} with {{serverId}} is {{getServerStatus()}}</p>
 
 <!-- 
     -----Data Binding-------
@@ -20,4 +20,25 @@
         ii.   You can't write multiline expression inside these {{}}
         iii.  You can't write block expressions like a If block or For loop here
         iv.   You can write ternary expression though.
+ -->
+
+
+  <!--
+    ngIf is a structural directive which decided whether a element should be a part of the DOM or not.
+
+    The other type of directive Angular provides is: attribute directive.
+
+    They are called so, because they just look like a normal HTML attribute without a star basically.
+
+    Attribute directive don't add or remove elements. They only change the element they were placed on.
+
+    The [] around ngStyle is not a part of ngStyle directive. The [] here indicates that we want to bind to some property on this directive.
+
+    And ngStyle directive has a property named as ngStyle as well. So we want to bind some value to ngStyle property of ngStyle directive.
+
+    It's value expects as an object.
+
+    So, ngStyle allows us to dynamically change the color based on value of serverStatus.
+
+    If serverStatus changes over time, it's bgColor will also change dynamically based on the value. 
  -->
