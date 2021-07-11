@@ -1,0 +1,13 @@
+webpack/./src/app -> Path to our source files inside devTools
+
+Typescript does not run in our browser.
+What browser understands is only Javascript.
+
+During the build process, Webpack converts these TS files to Javascript bundles.
+So in DevTools where the Javascript bundles are run, how can we find the typescript code we've written to debug??
+
+The converted Javascript code support sourcemaps. 
+
+Sourcemaps are little addition, that our CLI add to our Javascript bundles, so that our browser can map the JS code with the TS code.
+
+Sourcemaps are provided only in development mode and stripped out in production mode.
