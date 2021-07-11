@@ -31,7 +31,12 @@
 <p><b>Property Binding </b><span [innerText]="allowNewServer"></span></p>
 
 <!-- <p>{{serverCreationStatus}}</p> -->
-<p *ngIf="serverCreated">Server was created, server name is {{serverName}}</p>
+<p *ngIf="serverCreated; else noServer">Server was created, server name is {{serverName}}</p>
+<ng-template #noServer>
+    <p>
+        No Server was created!
+    </p>
+</ng-template>
 <hr>
 <app-server></app-server>
 <app-server></app-server>
@@ -47,6 +52,14 @@
 <!--bindings={ hook in DOM
   "ng-reflect-ng-if": "false"
 }-->
+
+<!-- 
+    we can choose what to do in else of ngIf by putting an local reference in DOM.
+
+    Local references are a mark/hook in DOM. We add local references through ng-template tag.
+
+    We named the local reference as 'noServer'
+ -->
 
 <!--
     If a HTML element has a event onclick, in Angular that will be click.
